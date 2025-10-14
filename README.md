@@ -3,7 +3,6 @@
 
 This repository contains code, data, tables and plots to support data analyses and reproduce results from the paper ComGRN: multi-domain single-cell data analysis guided by Common Gene Regulatory Network.
 - [Abstract](#abstract)
-- [Overview](#overview)
 - [System Requirements](#system-requirements)
 - [Installation Guide](#installation-guide)
 - [Usage](#Usage)
@@ -13,11 +12,6 @@ This repository contains code, data, tables and plots to support data analyses a
 
 # Abstract
 Single-cell sequencing technology provides deep insights into gene activity at the individual cell level, facilitating the study of gene regulatory mechanisms. However, observed gene expression is often influenced by confounding factors such as batch effects, perturbations, and spatial position, which obscure the true gene regulatory network that governs the cell’s intrinsic state. To address these challenges, we propose scConCRL, a novel conditional causal representation learning framework designed to extract true gene regulatory relationships independent of confounding information. By considering both fine-grained molecular gene variables and coarse-grained latent domain variables, scConCRL not only uncovers the intrinsic biological signals but also models the complex relationships between these variables. This dual function enables the separation of genuine cellular states from domain information, providing valuable insights for downstream analyses and biological discovery. We demonstrate the effectiveness of our model on multi-domain datasets from different platforms and perturbation conditions, showing its ability to accurately disentangle confounding influences and discover novel gene relationships. Extensive comparisons across various scenarios illustrate the superior performance of scConCRL in several tasks compared to existing methods. 
-
-# Overview
-<div align=center>
-<img src="" height="400" width="800">
-</div>
 
 # main file
 
