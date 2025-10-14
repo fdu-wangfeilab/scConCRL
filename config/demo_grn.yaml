@@ -1,0 +1,67 @@
+
+task_name: CIDM_real 
+output_path: ./
+
+data:
+  data_dir: /mnt/sdc/dongjiayi/denoise/datasets/
+  data_name: mESC
+  version: v2
+  cov_type: batch
+  batch_name: batch
+  state_name: daytime
+  is_raw_data: false
+  n_top_features: 0
+  batch_scale: true
+
+log:
+  stdout: false
+  stderr: false
+  tensorboard: true
+  team_name: plusone
+  project_name: ConCRL
+  experiment_name: grn_inference
+  scenario_name: test different hyper-parameters
+  
+model:
+  mlp_width: 512 
+  mlp_depth: 8
+  mlp_ac: 0.2
+  mlp_dropout: 0.2
+
+  lambda_rec: 0.1
+  lambda_recon_croase: 0.01
+  lambda_kl1: 0.1
+  lambda_kl2: 1
+  lambda_kl3: 0.01
+  lambda_tc: 1
+  lambda_align: 20
+
+  h_tol: 0.00000001
+  rho_max: 1000.0
+  rho: 1.0
+  alpha: 1.0 
+  lambda_l2: 0.01
+  lambda_l1: 0.01
+  optimizer: adamw
+  lr: 0.0001
+  weight_decay: 0.0001
+
+  dag_anneal_steps: 100
+  adv_step: 5
+
+  val_split: 0
+  batch_size: 512
+
+  epochs: 600
+
+  patience: 600 
+  num_hidden: 2
+  nonlinear: false
+  loss: bce
+
+
+reproduc:
+  seed: 1  
+  benchmark: false 
+  deterministic: true 
+    

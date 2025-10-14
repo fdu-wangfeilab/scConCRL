@@ -1,0 +1,71 @@
+
+task_name: CIDM_real
+output_path: ./
+state_flag: true
+
+data:
+  data_dir: /home/dongjiayi/workbench/denoise/data/
+  data_name: hPancreas
+  version: v2
+  batch_name: batch
+  state_name: cellstate
+  cov_type: batch
+  is_raw_data: true
+  n_top_features: 0
+  batch_scale: true
+  viz: true
+
+log:
+  stdout: false
+  stderr: false
+  tensorboard: true
+  team_name: plusone
+  project_name: ConCRL
+  experiment_name: batch_removal
+  scenario_name: test different hyper-parameters
+
+model:
+  mlp_width: 512
+  mlp_depth: 8
+  mlp_ac: 0.2
+  mlp_dropout: 0.2
+
+  # lambda_l1: 1
+  lambda_rec: 0.1
+  lambda_kl1: 0.0001
+  lambda_kl2: 0.01
+  lambda_kl3: 0.001
+  lambda_tc: 1
+  lambda_align: 10 
+
+  h_tol: 0.00000001
+  rho_max: 1000.0
+  rho: 1.0
+  alpha: 1.0
+  lambda_l2: 0.005
+  lambda_l1: 0.01
+  optimizer: adamw
+  lr: 0.0001
+  weight_decay: 0.0001
+
+  dag_anneal_steps: 100
+  adv_step: 5
+
+  val_split: 0
+  batch_size: 512
+
+  epochs: 500 
+
+  patience: 50
+  num_hidden: 4
+  nonlinear: false
+  loss: bce
+
+  load_model_flag: false
+
+
+reproduc:
+  seed: 1
+  benchmark: false
+  deterministic: true
+    
